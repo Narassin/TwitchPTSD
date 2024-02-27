@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>P2SD</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nova+Square&display=swap"
+        rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="style.css" rel="stylesheet">
+
+
+    <!-- Vendor CSS Files -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+    <!-- =======================================================
+        * Template Name: Narassin Web Base Template V1
+        * Author: Narassin
+        ======================================================= -->
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="blur">
+        
+    </div>
+    <div class="py-3 container">
+        <h1 class="text-white heading-1">Narassin PTSD Generator</h1>
+        <div class="py-3 row mb-5 ">
+            <div>
+                <div class="h-100 mb-auto p-5 text-bg-dark rounded-3">
+                    <!-- first Form -->
+                    <form id="schedForm">
+
+                        <!-- form group -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="d-flex flex-wrap">
+                                    <div >
+                                        <label class="my-2 me-2" for="date">Date:</label>
+                                        <input class="my-2 me-2" type="date" id="date" name="date" required>
+                                        <!-- Autofill -->
+                                        <label class="my-2 me-2" for="date">to:</label>
+                                        <input class="my-2 me-2" type="date" id="date2" name="date2" readonly>        
+                                    </div>
+                                    </div>
+                                <div class="d-flex flex-wrap row">
+                                    <div class="row">
+                                        <p>Streamings Days:</p>
+                                    </div>
+                                    <div class="col">
+                                        <input type="checkbox" id="day1" name="day1" value="Mon">
+                                        <label for="day1"> Monday</label><br>
+                                        <input type="checkbox" id="day2" name="day2" value="Tue">
+                                        <label for="day2"> Tuesday</label><br>
+                                    </div>
+                                    <div class="col">
+                                        <input type="checkbox" id="day3" name="day3" value="Wed">
+                                        <label for="day3"> Wednesday</label><br>
+                                        <input type="checkbox" id="day4" name="vehicle1" value="Thu">
+                                        <label for="day4"> Thursday</label><br>    
+                                    </div>
+                                    <div class="col">
+                                        <input type="checkbox" id="day5" name="day5" value="Fri">
+                                        <label for="day5"> Friday</label><br>
+                                        <input type="checkbox" id="day6" name="day6" value="Sat">
+                                        <label for="day6"> Saturday</label><br>
+                                    </div>
+                                    <div class="col">
+                                        <input type="checkbox" id="day7" name="day7" value="Sun">
+                                        <label for="day7"> Sunday</label><br>    
+                                    </div>
+                                    </div>
+                                <div class="d-flex flex-wrap row">
+                                    <h3>Featured Picture of the Week</h3>
+                                    <div class="col">
+                                        <input type="file" id="myFile" name="filename">
+                                
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row py-3" id="additionalFields">
+                            <div class="d-flex flex-wrap">
+                                <h3 class="me-3">Mon</h3>
+                                <label class="my-2 me-2" for="title-1">Title:</label>
+                                <input class="my-2 me-2" type="text" id="title-1" name="title-1" required>
+                                <!-- Added if Streaming -->
+                                <label class="my-2 me-2" for="time-1">Time:</label>
+                                <input class="my-2 me-2" type="time" id="time-1" name="time-1" required> 
+                                <label class="my-2 me-2" for="cat-1">Category:</label>
+                                <select id="cat-1" name="cat-1" required>
+                                    <option value="JC">Just Chatting</option>
+                                    <option value="code">Programming</option>
+                                    <option value="hi3">Honkai Impact</option>
+                                    <option value="art">Art</option>
+                                  </select>
+                            </div>
+                            <div class="d-flex flex-wrap">
+                                <h3 class="me-3">Tue</h3>
+                                <label class="my-2 me-2" for="title-2">Title:</label>
+                                <input class="my-2 me-2" type="text" id="title-2" name="title-2" required>
+                                <!-- Added if Streaming -->
+                                <label class="my-2 me-2" for="time-1">Time:</label>
+                                <input class="my-2 me-2" type="time" id="time-2" name="time-2" required> 
+                                <label class="my-2 me-2" for="cat-1">Category:</label>
+                                <select id="cat-2" name="cat-2" required>
+                                    <option value="JC">Just Chatting</option>
+                                    <option value="code">Programming</option>
+                                    <option value="hi3">Honkai Impact</option>
+                                    <option value="art">Art</option>
+                                  </select>
+                            </div>
+                            <div class="d-flex flex-wrap">
+                                <h3 class="me-3">Wed</h3>
+                                <label class="my-2 me-2" for="title-1">Title:</label>
+                                <input class="my-2 me-2" type="text" id="title-3" name="title-3" required>
+                                <!-- Added if Streaming -->
+                                <label class="my-2 me-2" for="time-3">Time:</label>
+                                <input class="my-2 me-2" type="time" id="time-3" name="time-3" required> 
+                                <label class="my-2 me-2" for="cat-3">Category:</label>
+                                <select id="cat-3" name="cat-3" required>
+                                    <option value="JC">Just Chatting</option>
+                                    <option value="code">Programming</option>
+                                    <option value="hi3">Honkai Impact</option>
+                                    <option value="art">Art</option>
+                                  </select>
+                            </div>
+                            <div class="d-flex flex-wrap">
+                                <h3 class="me-3">Thu</h3>
+                                <label class="my-2 me-2" for="title-1">Title:</label>
+                                <input class="my-2 me-2" type="text" id="title-4" name="title-4" required>
+                                <!-- Added if Streaming -->
+                                <label class="my-2 me-2" for="time-1">Time:</label>
+                                <input class="my-2 me-2" type="time" id="time-4" name="time-4" required> 
+                                <label class="my-2 me-2" for="cat-4">Category:</label>
+                                <select id="cat-4" name="cat-4" required>
+                                    <option value="JC">Just Chatting</option>
+                                    <option value="code">Programming</option>
+                                    <option value="hi3">Honkai Impact</option>
+                                    <option value="art">Art</option>
+                                  </select>
+                            </div>
+                            <div class="d-flex flex-wrap">
+                                <h3 class="me-3">Fri</h3>
+                                <label class="my-2 me-2" for="title-1">Title:</label>
+                                <input class="my-2 me-2" type="text" id="title-5" name="title-5" required>
+                                <!-- Added if Streaming -->
+                                <label class="my-2 me-2" for="time-1">Time:</label>
+                                <input class="my-2 me-2" type="time" id="time-5" name="time-5" required> 
+                                <label class="my-2 me-2" for="cat-1">Category:</label>
+                                <select id="cat-5" name="cat-5" required>
+                                    <option value="JC">Just Chatting</option>
+                                    <option value="code">Programming</option>
+                                    <option value="hi3">Honkai Impact</option>
+                                    <option value="art">Art</option>
+                                  </select>
+                            </div>
+                            <div class="d-flex flex-wrap">
+                                <h3 class="me-3">Sat</h3>
+                                <label class="my-2 me-2" for="title-6">Title:</label>
+                                <input class="my-2 me-2" type="text" id="title-6" name="title-6" required>
+                                <!-- Added if Streaming -->
+                                <label class="my-2 me-2" for="time-6">Time:</label>
+                                <input class="my-2 me-2" type="time" id="time-6" name="time-6" required> 
+                                <label class="my-2 me-2" for="cat-6">Category:</label>
+                                <select id="cat-6" name="cat-6" required>
+                                    <option value="JC">Just Chatting</option>
+                                    <option value="code">Programming</option>
+                                    <option value="hi3">Honkai Impact</option>
+                                    <option value="art">Art</option>
+                                  </select>
+                            </div>
+                            <div class="d-flex flex-wrap">
+                                <h3 class="me-3">Sun</h3>
+                                <label class="my-2 me-2" for="title-7">Title:</label>
+                                <input class="my-2 me-2" type="text" id="title-7" name="title-7" required>
+                                <!-- Added if Streaming -->
+                                <label class="my-2 me-2" for="time-7">Time:</label>
+                                <input class="my-2 me-2" type="time" id="time-7" name="time-7" required> 
+                                <label class="my-2 me-2" for="cat-7">Category:</label>
+                                <select id="cat-7" name="cat-7" required>
+                                    <option value="JC">Just Chatting</option>
+                                    <option value="code">Programming</option>
+                                    <option value="hi3">Honkai Impact</option>
+                                    <option value="art">Art</option>
+                                  </select>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <button type="submit">Generate Schedule</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="row my-5 ">
+            <!-- preview -->
+            <div class=" py-5 px-3 bg-dark border rounded-3">
+              <canvas id="schedule" class="sched" width="1280px" height="720px" ></canvas>
+              
+              </div>
+            </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
