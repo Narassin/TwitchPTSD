@@ -1,7 +1,32 @@
+// Script by Narassin
+// Things to do
+// Separate each canvas function to their respective modules
+// add a event listener to the form submit button
+// make sure the end date automatically update when start date is inputed
+// optimize the canvas by adding a canvas scaling.
+// (optional) add a downlaod button to download the schedule as a pdf or png.
+
+// VARIABLES LIST
 const canvas = document.getElementById('schedule');
 const ctx = canvas.getContext('2d');
-// var heightRatio = 9/16;
-// canvas.height = canvas.width * heightRatio;
+
+
+// // FORM HANDLING
+// document.getElementById('scheduleForm').addEventListener('submit', function(event) {
+//   event.preventDefault(); // Prevent default form submission
+
+//   // Get input values from form fields
+//   const title = document.getElementById('title').value;
+//   const name = document.getElementById('name').value;
+//   const startDate = document.getElementById('startDate').value;
+//   const endDate = document.getElementById('endDate').value;
+
+//   // Call generateSchedule function with input values
+//   generateSchedule(title, name, startDate, endDate);
+// });
+
+
+// Canvas Drawing Modules
 
 // Function to draw rounded rectangle
 function drawRoundedRect(x, y, width, height, radius) {
@@ -15,7 +40,7 @@ function drawRoundedRect(x, y, width, height, radius) {
 }
 
 
-// Function to draw the schedule
+// Main Schedule Module
 function drawSchedule( name, startDate, endDate) {
   
     // Draw background image
