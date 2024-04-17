@@ -31,12 +31,12 @@ function formLog() {
     var form = document.getElementById('schedForm');
     var formData = new FormData(form);
     var jsonData = {};
-    
-    console.log(jsonData);
 
     formData.forEach(function(value, key) {
         jsonData[key] = value;
     });
 
     console.log(jsonData);
+    const event = new CustomEvent('schedule-form-submit', { detail: jsonData });
+    document.dispatchEvent(event);
 }

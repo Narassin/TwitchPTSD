@@ -6,6 +6,15 @@
 // optimize the canvas by adding a canvas scaling.
 // (optional) add a downlaod button to download the schedule as a pdf or png.
 
+document.addEventListener('schedule-form-submit',function(event){
+  console.log("Event received");
+  console.log(event.detail);
+  const data = event.detail;
+  // const imageData = event.detail.filename;
+  const imageData = document.getElementById('myFile');
+  drawSchedule(data,imageData);
+});
+
 // VARIABLES LIST
 const canvas = document.getElementById('schedule');
 const ctx = canvas.getContext('2d');
@@ -41,10 +50,28 @@ function drawRoundedRect(x, y, width, height, radius) {
 
 
 // Main Schedule Module
-function drawSchedule( name, startDate, endDate) {
+function drawSchedule(data,imageData) {
   
-    // Draw background image
+  // Draw background image
+  const name = 'Narassin';
   const bgImage = new Image();
+  const filename = data.filename;
+  console.log('Filename:', filename);
+  var imageUrl = '';  
+
+  const imageFile = imageData.files[0]; // Assuming imageData is the file input element
+    if (imageFile) {
+      console.log('pass checkpoint');
+      console.log('Image file:', imageFile);
+      imageUrl = URL.createObjectURL(imageFile);
+
+        // Now you can use imageUrl to display the uploaded image or perform further processing
+        console.log('Image URL:', imageUrl);
+    } else {
+        console.error('No image file selected');
+    }
+  console.log('Image URL:', imageUrl);
+
   bgImage.src = 'Assets/Canvas/bg.png'; // Replace with your image URL
   bgImage.onload = function() {
     ctx.drawImage(bgImage, 0, 0, canvas.width, canvas.height);
@@ -56,7 +83,7 @@ function drawSchedule( name, startDate, endDate) {
     ctx.font = "36px 'Russo One', sans-serif";
     ctx.fillStyle = "white";
     ctx.textAlign = "center";
-    ctx.fillText(`${name}'s Schedule ${startDate} - ${endDate}`, canvas.width / 2, 35);
+    ctx.fillText(`${name}'s Schedule ${data.date} - ${data.date2}`, canvas.width / 2, 35);
     
     // Draw schedule listing
     const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
@@ -69,11 +96,15 @@ function drawSchedule( name, startDate, endDate) {
     // render the Schedule List
     // ctx.font = "20px 'Kode Mono', monospace";
     ctx.textAlign = "left";
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0,j=1; i < 7; i++,j++) {
         // var title = document.getElementById('title'+ i).value;
         // ctx.font = "16px 'Kode Mono', monospace";
+        const time = data[`time-${j}`];
         const day = days[i];
-        const date = new Date(startDate);
+        const title = data[`title-${j}`];
+        var cate = data[`cat-${j}`];
+        console.log(title);
+        const date = new Date(data.date);
         date.setDate(date.getDate() + i);
         const dateString = `${date.toDateString().slice(4, 10)}`;
 
@@ -103,15 +134,43 @@ function drawSchedule( name, startDate, endDate) {
           ctx.textAlign = "center";
           ctx.fillText(`${day}`, startX + xOffset/4*3, startY + yOffset + i * lineHeight+6);
           
+          ctx.font = "16px 'Bebas Neue', sans-serif";
+          ctx.fillText(`${time}`, startX + xOffset/4*3, startY + yOffset + 15 + i * lineHeight+6);
+          console.log(title);
+          
           // Title
+          ctx.font = "30px 'Bebas Neue', sans-serif";
           ctx.textAlign = "left";
-          ctx.fillText("Schedule Title", startX + xOffset, startY + yOffset + i * lineHeight+6);
+          if(title!== ''){
+            ctx.fillText(`${title}`, startX + xOffset, startY + yOffset + i * lineHeight+6);
+          } else {
+            ctx.fillText('Rest Day', startX + xOffset, startY + yOffset + i * lineHeight+6);
+          }
+
           // ${title};
 
           ctx.restore();
         };
-        cat.src = 'Assets/Canvas/code.png';
-
+        
+        
+        switch(cate) {
+          case 'JC':
+            cat.src = 'Assets/Canvas/rpg.png';
+            break;
+          case 'code':
+            cat.src = 'Assets/Canvas/code.png';
+            break;
+          case 'hi3':
+            cat.src = 'Assets/Canvas/hi3.png';
+            break;
+          case 'art':
+            cat.src = 'Assets/Canvas/art.png';
+            break;
+          default:
+            cat.src = 'Assets/Canvas/code.png';
+            break;
+        }
+        
 
         // // Date
         // ctx.font = "16px 'Kode Mono', monospace";
@@ -166,9 +225,9 @@ function drawSchedule( name, startDate, endDate) {
         // ctx.drawImage(img, canvas.width-cardWidth-225 ,(canvas.height/2+cardHeight/2)-80 , cardWidth -20, cardHeight - 20);
         ctx.restore();
     };
-    img.src = 'Assets/Canvas/card.png';
+    img.src = imageUrl;
      
   };
 }
 
-drawSchedule("Stream", "02/26/24", "03/03/24");
+// drawSchedule("Stream", "02/26/24", "03/03/24");
