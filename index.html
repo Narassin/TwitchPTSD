@@ -18,7 +18,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nova+Square&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kode+Mono:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
     <!-- Template Main CSS File -->
     <link href="style.css" rel="stylesheet">
 
@@ -40,7 +42,8 @@
         
     </div>
     <div class="py-3 container">
-        <h1 class="text-white heading-1">Narassin PTSD Generator</h1>
+        <h6 class="m-0 pt-3 text-white text-center text-monospace">Narassin</h6>
+        <h1 class="text-white text-center display-1">PTSD Generator</h1>
         <div class="py-3 row mb-5 ">
             <div>
                 <div class="h-100 mb-auto p-5 text-bg-dark rounded-3">
@@ -51,44 +54,44 @@
                         <div class="row">
                             <div class="col">
                                 <div class="d-flex flex-wrap">
-                                    <div >
-                                        <label class="my-2 me-2" for="date">Date:</label>
-                                        <input class="my-2 me-2" type="date" id="date" name="date" onchange="updateEndDate()" required>
+                                    <div class="input-group">
+                                        <label class="btn btn-outline-secondary input-group-text" for="date">Date:</label>
+                                        <input class="btn btn-outline-secondary form-control" type="date" id="date" name="date" onchange="updateEndDate()" required>
                                         <!-- Autofill -->
-                                        <label class="my-2 me-2" for="date">to:</label>
-                                        <input class="my-2 me-2" type="date" id="date2" name="date2" readonly>        
+                                        <label class="btn btn-outline-secondary input-group-text" for="date">to:</label>
+                                        <input class="btn btn-outline-secondary form-control"  type="date" id="date2" name="date2" readonly>        
                                     </div>
                                     </div>
                                 <div class="d-flex flex-wrap row">
-                                    <div class="row">
-                                        <p>Streamings Days:</p>
+                                    <div class="row py-3">
+                                        <h4 class="text-center">Streamings Days:</h4>
                                     </div>
                                     <div class="col">
-                                        <input type="checkbox" id="day1" name="day1" value="Mon" onchange="toggleField(1)">
-                                        <label for="day1"> Monday</label><br>
-                                        <input type="checkbox" id="day2" name="day2" value="Tue" onchange="toggleField(2)">
-                                        <label for="day2"> Tuesday</label><br>
+                                        <input class="btn-check" type="checkbox" id="day1" name="day1" value="Mon" onchange="toggleField(1)" autocomplete="off">
+                                        <label class="btn text-white days" for="day1"> Monday</label><br>
+                                        <input class="btn-check" type="checkbox" id="day2" name="day2" value="Tue" onchange="toggleField(2)">
+                                        <label class="btn text-white days"  for="day2"> Tuesday</label><br>
                                     </div>
                                     <div class="col">
-                                        <input type="checkbox" id="day3" name="day3" value="Wed" onchange="toggleField(3)">
-                                        <label for="day3"> Wednesday</label><br>
-                                        <input type="checkbox" id="day4" name="vehicle1" value="Thu" onchange="toggleField(4)">
-                                        <label for="day4"> Thursday</label><br>
+                                        <input class="btn-check" type="checkbox" id="day3" name="day3" value="Wed" onchange="toggleField(3)">
+                                        <label class="btn text-white days" for="day3"> Wednesday</label><br>
+                                        <input class="btn-check" type="checkbox" id="day4" name="day4" value="Thu" onchange="toggleField(4)">
+                                        <label class="btn text-white days" for="day4"> Thursday</label><br>
                                     </div>
                                     <div class="col">
-                                        <input type="checkbox" id="day5" name="day5" value="Fri" onchange="toggleField(5)">
-                                        <label for="day5"> Friday</label><br>
-                                        <input type="checkbox" id="day6" name="day6" value="Sat" onchange="toggleField(6)">
-                                        <label for="day6"> Saturday</label><br>
+                                        <input class="btn-check" type="checkbox" id="day5" name="day5" value="Fri" onchange="toggleField(5)">
+                                        <label class="btn text-white days" for="day5"> Friday</label><br>
+                                        <input class="btn-check" type="checkbox" id="day6" name="day6" value="Sat" onchange="toggleField(6)">
+                                        <label class="btn text-white days" for="day6"> Saturday</label><br>
                                     </div>
                                     <div class="col">
-                                        <input type="checkbox" id="day7" name="day7" value="Sun" onchange="toggleField(7)">
-                                        <label for="day7"> Sunday</label><br>    
+                                        <input class="btn-check" type="checkbox" id="day7" name="day7" value="Sun" onchange="toggleField(7)">
+                                        <label class="btn text-white days" for="day7"> Sunday</label><br>    
                                     </div>
                                     </div>
                                 <div class="d-flex flex-wrap row">
-                                    <h3>Featured Picture of the Week</h3>
-                                    <div class="col">
+                                    <h4 class="text-center">Featured Picture of the Week</h4>
+                                    <div class="text-center">
                                         <input type="file" id="myFile" name="filename">
                                 
                                     </div>
@@ -97,122 +100,79 @@
                         </div>
 
                         <div class="row py-3" id="additionalFields">
-                            <div class="d-flex flex-wrap d-none" id="field1">
-                                <h3 class="me-3">Mon</h3>
-                                <label class="my-2 me-2" for="title-1">Title:</label>
-                                <input class="my-2 me-2" type="text" id="title-1" name="title-1">
-                                <!-- Added if Streaming -->
-                                <label class="my-2 me-2" for="time-1">Time:</label>
-                                <input class="my-2 me-2" type="time" id="time-1" name="time-1"> 
-                                <label class="my-2 me-2" for="cat-1">Category:</label>
-                                <select id="cat-1" name="cat-1">
-                                    <option value=" ">Select Category</option>
-                                    <option value="JC">Just Chatting</option>
-                                    <option value="code">Programming</option>
-                                    <option value="hi3">Honkai Impact</option>
-                                    <option value="art">Art</option>
-                                  </select>
+                            <div class="d-flex flex-wrap d-none pb-3" id="field1">
+                                <h3 class="me-3">MONDAY</h3>
+                                <div class="input-group">
+                                    <select class="dropdown-toggle btn btn-outline-secondary"  id="cat-1" name="cat-1" aria-expanded="false">
+                                    </select>
+                                    <input class="form-control btn btn-outline-secondary"  type="text" id="title-1" name="title-1">
+                                    <input class="btn btn-outline-secondary"  type="time" id="time-1" name="time-1"> 
+                                </div>
                             </div>
-                            <div class="d-flex flex-wrap d-none" id="field2">
-                                <h3 class="me-3">Tue</h3>
-                                <label class="my-2 me-2" for="title-2">Title:</label>
-                                <input class="my-2 me-2" type="text" id="title-2" name="title-2">
-                                <!-- Added if Streaming -->
-                                <label class="my-2 me-2" for="time-1">Time:</label>
-                                <input class="my-2 me-2" type="time" id="time-2" name="time-2"> 
-                                <label class="my-2 me-2" for="cat-1">Category:</label>
-                                <select id="cat-2" name="cat-2">
-                                    <option value=" ">Select Category</option>
-                                    <option value="JC">Just Chatting</option>
-                                    <option value="code">Programming</option>
-                                    <option value="hi3">Honkai Impact</option>
-                                    <option value="art">Art</option>
-                                  </select>
+                            
+                            <div class="d-flex flex-wrap row d-none pb-3" id="field2">
+                                <h3 class="me-3">TUESDAY</h3>
+                                <div class="input-group">
+                                    <select class="dropdown-toggle btn btn-outline-secondary"  id="cat-2" name="cat-2" aria-expanded="false">
+                                    </select>
+                                    <input class="form-control btn btn-outline-secondary"  type="text" id="title-2" name="title-2">
+                                    <input class="btn btn-outline-secondary"  type="time" id="time-2" name="time-2"> 
+                                </div>
                             </div>
-                            <div class="d-flex flex-wrap d-none" id="field3">
-                                <h3 class="me-3">Wed</h3>
-                                <label class="my-2 me-2" for="title-1">Title:</label>
-                                <input class="my-2 me-2" type="text" id="title-3" name="title-3">
-                                <!-- Added if Streaming -->
-                                <label class="my-2 me-2" for="time-3">Time:</label>
-                                <input class="my-2 me-2" type="time" id="time-3" name="time-3"> 
-                                <label class="my-2 me-2" for="cat-3">Category:</label>
-                                <select id="cat-3" name="cat-3">
-                                    <option value=" ">Select Category</option>
-                                    <option value="JC">Just Chatting</option>
-                                    <option value="code">Programming</option>
-                                    <option value="hi3">Honkai Impact</option>
-                                    <option value="art">Art</option>
-                                  </select>
+
+                            <div class="d-flex flex-wrap d-none pb-3" id="field3">
+                                <h3 class="me-3">WEDNESDAY</h3>
+                                <div class="input-group">
+                                    <select class="dropdown-toggle btn btn-outline-secondary"  id="cat-3" name="cat-3" aria-expanded="false">
+                                    </select>
+                                    <input class="form-control btn btn-outline-secondary"  type="text" id="title-3" name="title-3">
+                                    <input class="btn btn-outline-secondary"  type="time" id="time-3" name="time-3"> 
+                                </div>
                             </div>
-                            <div class="d-flex flex-wrap d-none" id="field4">
-                                <h3 class="me-3">Thu</h3>
-                                <label class="my-2 me-2" for="title-1">Title:</label>
-                                <input class="my-2 me-2" type="text" id="title-4" name="title-4">
-                                <!-- Added if Streaming -->
-                                <label class="my-2 me-2" for="time-1">Time:</label>
-                                <input class="my-2 me-2" type="time" id="time-4" name="time-4"> 
-                                <label class="my-2 me-2" for="cat-4">Category:</label>
-                                <select id="cat-4" name="cat-4">
-                                    <option value=" ">Select Category</option>
-                                    <option value="JC">Just Chatting</option>
-                                    <option value="code">Programming</option>
-                                    <option value="hi3">Honkai Impact</option>
-                                    <option value="art">Art</option>
-                                  </select>
+                            
+                            <div class="d-flex flex-wrap d-none pb-3" id="field4">
+                                <h3 class="me-3">THURSDAY</h3>
+                                <div class="input-group">
+                                    <select class="dropdown-toggle btn btn-outline-secondary"  id="cat-4" name="cat-4" aria-expanded="false">
+                                    </select>
+                                    <input class="form-control btn btn-outline-secondary"  type="text" id="title-4" name="title-4">
+                                    <input class="btn btn-outline-secondary"  type="time" id="time-4" name="time-4"> 
+                                </div>
                             </div>
-                            <div class="d-flex flex-wrap d-none" id="field5">
-                                <h3 class="me-3">Fri</h3>
-                                <label class="my-2 me-2" for="title-1">Title:</label>
-                                <input class="my-2 me-2" type="text" id="title-5" name="title-5">
-                                <!-- Added if Streaming -->
-                                <label class="my-2 me-2" for="time-1">Time:</label>
-                                <input class="my-2 me-2" type="time" id="time-5" name="time-5"> 
-                                <label class="my-2 me-2" for="cat-1">Category:</label>
-                                <select id="cat-5" name="cat-5">
-                                    <option value=" ">Select Category</option>
-                                    <option value="JC">Just Chatting</option>
-                                    <option value="code">Programming</option>
-                                    <option value="hi3">Honkai Impact</option>
-                                    <option value="art">Art</option>
-                                  </select>
+                            
+                            <div class="d-flex flex-wrap d-none pb-3" id="field5">
+                                <h3 class="me-3">FRIDAY</h3>
+                                <div class="input-group">
+                                    <select class="dropdown-toggle btn btn-outline-secondary"  id="cat-5" name="cat-5" aria-expanded="false">
+                                    </select>
+                                    <input class="form-control btn btn-outline-secondary"  type="text" id="title-5" name="title-5">
+                                    <input class="btn btn-outline-secondary"  type="time" id="time-5" name="time-5"> 
+                                </div>
                             </div>
-                            <div class="d-flex flex-wrap d-none" id="field6">
-                                <h3 class="me-3">Sat</h3>
-                                <label class="my-2 me-2" for="title-6">Title:</label>
-                                <input class="my-2 me-2" type="text" id="title-6" name="title-6">
-                                <!-- Added if Streaming -->
-                                <label class="my-2 me-2" for="time-6">Time:</label>
-                                <input class="my-2 me-2" type="time" id="time-6" name="time-6"> 
-                                <label class="my-2 me-2" for="cat-6">Category:</label>
-                                <select id="cat-6" name="cat-6">
-                                    <option value=" ">Select Category</option>
-                                    <option value="JC">Just Chatting</option>
-                                    <option value="code">Programming</option>
-                                    <option value="hi3">Honkai Impact</option>
-                                    <option value="art">Art</option>
-                                  </select>
+                            
+                            <div class="d-flex flex-wrap d-none pb-3" id="field6">
+                                <h3 class="me-3 text-center">SATURDAY</h3>
+                                <div class="input-group">
+                                    <select class="dropdown-toggle btn btn-outline-secondary"  id="cat-6" name="cat-6" aria-expanded="false">
+                                    </select>
+                                    <input class="form-control btn btn-outline-secondary"  type="text" id="title-6" name="title-6">
+                                    <input class="btn btn-outline-secondary"  type="time" id="time-6" name="time-6"> 
+                                </div>
                             </div>
-                            <div class="d-flex flex-wrap d-none" id="field7">
-                                <h3 class="me-3">Sun</h3>
-                                <label class="my-2 me-2" for="title-7">Title:</label>
-                                <input class="my-2 me-2" type="text" id="title-7" name="title-7" >
-                                <!-- Added if Streaming -->
-                                <label class="my-2 me-2" for="time-7">Time:</label>
-                                <input class="my-2 me-2" type="time" id="time-7" name="time-7" > 
-                                <label class="my-2 me-2" for="cat-7">Category:</label>
-                                <select id="cat-7" name="cat-7" >
-                                    <option value=" ">Select Category</option>
-                                    <option value="JC">Just Chatting</option>
-                                    <option value="code">Programming</option>
-                                    <option value="hi3">Honkai Impact</option>
-                                    <option value="art">Art</option>
-                                  </select>
+                            
+                            <div class="d-flex flex-wrap d-none pb-3" id="field7">
+                                <h3 class="me-3">SUNDAY</h3>
+                                <div class="input-group">
+                                    <select class="dropdown-toggle btn btn-outline-secondary"  id="cat-7" name="cat-7" aria-expanded="false">
+                                    </select>
+                                    <input class="form-control btn btn-outline-secondary"  type="text" id="title-7" name="title-7">
+                                    <input class="btn btn-outline-secondary"  type="time" id="time-7" name="time-7"> 
+                                </div>
                             </div>
                             
                         </div>
                         <div class="row">
-                            <div id="submitButton" class="btn h2" onclick="formLog()">Generate Schedule</div>
+                            <div id="submitButton" class="btn btn-outline-secondary h2" onclick="formLog()">Generate Schedule</div>
                         </div>
                     </form>
 
@@ -221,7 +181,7 @@
         </div>
         <div class="row my-5 ">
             <!-- preview -->
-            <div class=" py-5 px-3 bg-dark border rounded-3">
+            <div id="previ" class=" py-5 px-3 bg-dark border rounded-3 d-none">
               <!-- <canvas id="schedule" class="sched" ></canvas> -->
               <!-- <canvas id="schedule" class="sched" width="1100px" height="618.75px" ></canvas> -->
               <canvas id="schedule" class="sched" width="1280px" height="720px" ></canvas>

@@ -1,6 +1,6 @@
 body{
     /* background-color: rgba(0, 0, 0, 0.781); */
-    background-image: url("Assets/King.png");
+    background-image: url("Assets/Background.png");
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
@@ -19,4 +19,27 @@ body{
 .sched{
     border: 1px #000 solid;
     /* width: 100%; */
+}
+
+label.days{
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0px;
+}
+
+h6{
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0px;
+}
+
+h1{
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    margin: 0px;
 }
