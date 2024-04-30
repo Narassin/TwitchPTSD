@@ -1,3 +1,37 @@
+// Option Arrays for categories
+var categories = [
+    {
+        text : 'Select Category',
+        value : ''
+    },
+    {
+        text : 'Just Chatting',
+        value : 'JC'
+    },
+    {
+        text : 'Programming',
+        value : 'code'
+    },
+    {
+        text : 'Art',
+        value : 'art'
+    },
+    {
+        text : 'Honkai Impact 3rd',
+        value : 'hi3'
+    },
+];
+for(let i=1; i<= 7; i++){
+    var optionlist = document.getElementById(`cat-${i}`).options;
+
+    categories.forEach(option =>
+        optionlist.add(
+        new Option(option.text, option.value, option.selected)
+        )
+    );
+}
+
+
 // Autofill endDate and restricting startdate
 function updateEndDate() {
     var startDateInput = document.getElementById('date');
@@ -40,3 +74,4 @@ function formLog() {
     const event = new CustomEvent('schedule-form-submit', { detail: jsonData });
     document.dispatchEvent(event);
 }
+

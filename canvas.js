@@ -7,6 +7,8 @@
 // (optional) add a downlaod button to download the schedule as a pdf or png.
 
 document.addEventListener('schedule-form-submit',function(event){
+  var previ = document.getElementById('previ');
+  previ.classList.remove('d-none');
   console.log("Event received");
   console.log(event.detail);
   const data = event.detail;
@@ -192,17 +194,17 @@ function drawSchedule(data,imageData) {
     const cardWidth = 300;
     const cardHeight = cardWidth/2*3;
     const cardRadius = 10;
-    const tiltAngle = -20;
+    const tiltAngle = -10;
     const cardX = canvas.width - cardWidth - 20;
     const cardY = canvas.height / 2 - cardHeight / 2;
-    const LCHeight = 15;
+    // const LCHeight = 15;
 
 
     // Inserting Card Cover
     const cover = new Image();
     ctx.save();
     cover.onload = function() {
-              ctx.drawImage(cover, cardX + 10, cardY + 10, cardWidth - 20, cardHeight - 20);
+              ctx.drawImage(cover, cardX-10 , cardY+10 , cardWidth, cardHeight);
     };
     cover.src = 'Assets/Canvas/cardCover.png';
     
@@ -211,17 +213,17 @@ function drawSchedule(data,imageData) {
     img.onload = function() {
         ctx.save();
         ctx.rotate(tiltAngle * Math.PI / 180);
-        ctx.translate(canvas.width-cardWidth-225 ,(canvas.height/2+cardHeight/2)-140);
-        drawRoundedRect(0, 0, cardWidth- 20, cardHeight-20, cardRadius);
+        ctx.translate(canvas.width-cardWidth-130 ,(canvas.height/2+cardHeight/2)-250);
+        drawRoundedRect(0, 0, cardWidth, cardHeight, cardRadius);
         ctx.clip();
-        ctx.drawImage(img, 0,0 , cardHeight* img.width/img.height + 20, cardHeight + 20);
-        ctx.fillStyle = "purple";
-        ctx.font = "11px Arial";
-        ctx.fillText("* Stream are subject for changes", 10,cardHeight/8*6);
-        ctx.fillText("  (Always high chance for guerrilla stream)", 10,cardHeight/8*6+LCHeight);
-        ctx.fillText("* Update announcement will be made on", 10,cardHeight/8*6+LCHeight*2);
-        ctx.fillText("  Twitter / X", 10,cardHeight/8*6+LCHeight*3);
-        ctx.fillText("  Twitter(X): @thenarassin", 10,cardHeight/8*6+LCHeight*4);
+        ctx.drawImage(img, 0,0 , cardHeight* img.width/img.height , cardHeight);
+        // ctx.fillStyle = "purple";
+        // ctx.font = "11px Arial";
+        // ctx.fillText("* Stream are subject for changes", 10,cardHeight/8*6);
+        // ctx.fillText("  (Always high chance for guerrilla stream)", 10,cardHeight/8*6+LCHeight);
+        // ctx.fillText("* Update announcement will be made on", 10,cardHeight/8*6+LCHeight*2);
+        // ctx.fillText("  Twitter / X", 10,cardHeight/8*6+LCHeight*3);
+        // ctx.fillText("  Twitter(X): @thenarassin", 10,cardHeight/8*6+LCHeight*4);
         // ctx.drawImage(img, canvas.width-cardWidth-225 ,(canvas.height/2+cardHeight/2)-80 , cardWidth -20, cardHeight - 20);
         ctx.restore();
     };
